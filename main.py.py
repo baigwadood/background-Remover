@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 from rembg import remove
 from PIL import Image
 from io import BytesIO
@@ -30,7 +28,7 @@ if st.button("Remove"):
         #output = remove(bytes_data)
         #st.image(output, caption='Sunrise by the mountains')
         # Importing required module
-         if option=='General (For general use cases)':
+        if option=='General (For general use cases)':
             model="u2net"
         elif option== 'Quick Remove (Faster background removal for general use cases)':
             model='u2netp'
@@ -48,7 +46,7 @@ if st.button("Remove"):
             btn = st.download_button(
             label="Download image",
             data=file,
-            file_name="flower.png",
+            file_name="background_removed.png",
             mime="image/png"
           )
 
